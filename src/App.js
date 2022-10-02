@@ -9,10 +9,10 @@ function App() {
 	return (
 		<div>
 			<button
-				style={{ backgroundColor: btnColor, color: "white" }}
+				style={{ backgroundColor: isDisabled ? "gray" : btnColor, color: "white" }}
 				onClick={() => setBtnColor(newColor)}
 				disabled={isDisabled}>
-				{btnColor === "red" ? "Change to blue" : "Change to red"}
+				Change to {newColor}
 			</button>
 			<hr />
 			<input
@@ -22,7 +22,9 @@ function App() {
 				defaultChecked={isDisabled}
 				onChange={(e) => setDisabled(e.target.checked)}
 			/>
-			<label htmlFor="disable-button-checkbox">Disable button</label>
+			<label htmlFor="disable-button-checkbox" style={{ color: "white" }}>
+				<small>Disable button</small>
+			</label>
 		</div>
 	);
 }
